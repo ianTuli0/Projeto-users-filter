@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IUser } from './interfaces/user/user.interface';
+
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'filtro-usuarios';
+userSelected: IUser = {} as IUser;
+showUserDetails: boolean = false;
+
+onUserSelected(user: IUser){
+  this.userSelected = user;
+  this.showUserDetails = true;
+}
+
 }
